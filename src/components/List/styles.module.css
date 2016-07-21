@@ -1,0 +1,11 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  position: relative;
+  list-style: none;
+  padding: 0;
+}
+.item img{
+  width: 100%;
+}

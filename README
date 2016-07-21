@@ -1,0 +1,11 @@
+This is ReactJS & webpack basic setup for development and production
+Ready to use
+
+First of all install dependencies running:
+npm install
+
+For development:
+npm run dev-start
+
+For production:
+npm run build-prod

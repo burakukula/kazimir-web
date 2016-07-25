@@ -2,6 +2,9 @@ import React from 'react'
 import {Link} from 'react-router'
 import $ from 'jquery'
 import List from '../List/List'
+import Map from '../Map/Map'
+import Header from '../Header/Header'
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -31,7 +34,9 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <List props={this.state.data}/>
+        <Header />
+        <List props={this.state.data} />
+        <Map props={this.state.data} />
       </div>
     )
   }

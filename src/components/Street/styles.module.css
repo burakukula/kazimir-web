@@ -1,0 +1,12 @@
+.streetName {
+  position: absolute;
+  top: 45%;
+  text-align: center;
+  width: 100%;
+}
+.streetName span {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 600;
+}

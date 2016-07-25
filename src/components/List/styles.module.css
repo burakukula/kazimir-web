@@ -5,7 +5,32 @@
   position: relative;
   list-style: none;
   padding: 0;
+  align-items: center;
+  justify-content: center;
+}
+.item {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  text-align: center;
+  cursor: pointer;
 }
 .item img{
   width: 100%;
+
+}
+.title {
+  top: 40%;
+  font-size: bold;
+  color: #fff;
+}
+.cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.4;
+  background-image: linear-gradient(to bottom right, #323232 0%, #000000 100%);
 }

@@ -1,3 +1,7 @@
-.app p {
-  color: red;
+* {
+  color: #77787a;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+body {
+  margin: 0;
 }

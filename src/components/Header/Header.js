@@ -5,7 +5,9 @@ const Header = () => {
   return (
     <nav className={styles.navigationFixed}>
       <ul className={styles.navigation}>
-        <li className={styles.logo}><a href="#"><img src="../../utils/img/kazimir_logo.png"/></a></li>
+        <li className={styles.logo}>
+          <a href="#"><img src="../../utils/img/Kazimir_sygnet.png"/></a>
+        </li>
         <li className={styles.navLink}><a href="#">About</a></li>
         <li className={styles.navLink}><a href="#">Team</a></li>
         <li className={styles.navLink}><a href="#">Press</a></li>

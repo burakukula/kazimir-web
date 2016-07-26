@@ -1,7 +1,5 @@
-This is ReactJS & webpack basic setup for development and production
-Ready to use
+Kazimir web version ReactJS & webpack experiment
 
-First of all install dependencies running:
 npm install
 
 For development:

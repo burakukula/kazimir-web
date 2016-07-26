@@ -3,7 +3,7 @@ import styles from './styles.module.css'
 
 const Header = () => {
   return (
-    <nav>
+    <nav className={styles.navigationFixed}>
       <ul className={styles.navigation}>
         <li className={styles.logo}><a href="#"><img src="../../utils/img/kazimir_logo.png"/></a></li>
         <li className={styles.navLink}><a href="#">About</a></li>

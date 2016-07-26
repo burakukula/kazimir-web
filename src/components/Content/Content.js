@@ -36,7 +36,7 @@ export default class App extends React.Component {
       <div>
         <Header />
         <List props={this.state.data} />
-        <Map props={this.state.data} />
+        <Map />
       </div>
     )
   }

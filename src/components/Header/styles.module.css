@@ -1,3 +1,12 @@
+.navigationFixed {
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  background-color: #fff;
+  z-index: 10;
+  top: 0;
+}
+
 .navigation {
   display:flex;
   list-style-type:none;

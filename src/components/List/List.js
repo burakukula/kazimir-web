@@ -27,7 +27,7 @@ export default class List extends React.Component {
       });
     }
   }
-  handleClick(i, item) {
+  handleClick(index, item) {
     console.log('You clicked', item.street.name);
   }
 

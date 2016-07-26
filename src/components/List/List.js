@@ -5,7 +5,8 @@ export default class List extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      list: []
+      list: [],
+      activeItem: {}
     };
   }
   getList(props) {
@@ -29,9 +30,14 @@ export default class List extends React.Component {
   }
   handleClick(index, item) {
     console.log('You clicked', item.street.name);
+    this.setState({
+      activeItem: item.street.id
+    });
   }
 
   render() {
+    console.log(this.state);
+    console.log(this.props);
     return (
       <div>
         <ul className={styles.list}>

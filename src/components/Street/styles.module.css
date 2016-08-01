@@ -1,12 +1,10 @@
-.streetName {
-  position: absolute;
-  top: 45%;
-  text-align: center;
-  width: 100%;
+/*.streetElement {
+  display: none;
 }
-.streetName span {
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 30px;
-  font-weight: 600;
+.streetElement .is-true {
+  display: none;
 }
+
+.streetElement .is-true {
+  display: block;
+}*/

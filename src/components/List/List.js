@@ -9,6 +9,7 @@ export default class List extends React.Component {
       activeItem: {}
     };
   }
+
   getList(props) {
     let list = [];
     if (props.props) {
@@ -28,11 +29,10 @@ export default class List extends React.Component {
       });
     }
   }
-  handleClick(index, item) {
-    console.log('You clicked', item.street.name);
+  updateState(index) {
     this.setState({
-      activeItem: item.street.id
-    });
+      activeItem: index
+    })
   }
 
   render() {
@@ -41,10 +41,17 @@ export default class List extends React.Component {
         <ul className={styles.list}>
             {this.state.list.map((item, index) => {
               return (
-                <li onClick={this.handleClick.bind(this,index,item)} className={styles.item} key={item.street.id}>
+                <li onClick={this.updateState.bind(this, index)} className={styles.item} key={item.street.id}>
                   <img src={item.street.places.present[0].photos[0].images.large}/>
                   <div className={styles.cover}></div>
-                  <Street props={item.street} key={index}  />
+                  <div className={styles.streetName}>
+                    <span>{item.street.name}</span>
+                  </div>
+                  <Street
+                    active={this.state.activeItem === index}
+                    props={item.street}
+                    key={index}
+                  />
                 </li>
               )
             })}

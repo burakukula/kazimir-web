@@ -7,7 +7,12 @@ export default class Street extends React.Component {
 
   render() {
     var street = this.props.props;
-    console.log(this.props);
+    if(this.props.active) {
+      var activeView = street;
+      console.log(activeView);
+    }
+
+
     return (
       <div className={styles.streetElement} onClick = {this.props.updateStateProp}>
       </div>

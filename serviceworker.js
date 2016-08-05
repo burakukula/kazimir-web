@@ -1,7 +1,7 @@
 var CACHE_NAME = 'demo';
 var CACHE_FILES = [
-  'index.html',
-  'static/bundle.js',
+  // 'index.html',
+  // 'bundle.js',
   'http://kazimirapp.pl/streets.json'
 ];
 self.addEventListener('install', function (event) {

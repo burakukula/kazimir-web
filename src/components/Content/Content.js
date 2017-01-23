@@ -42,7 +42,7 @@ export default class App extends React.Component {
       <div>
         <Header />
         <List setActiveItem={this.setActiveItem.bind(this)}
-              props={this.state.data} />
+              props={this.state} />
         <Map props={this.state} />
       </div>
     )

@@ -12,8 +12,8 @@ export default class List extends React.Component {
 
   getList(props) {
     let list = [];
-    if (props.props) {
-      list = props.props.map(function(item, i) {
+    if (props.props.data) {
+      list = props.props.data.map(function(item, i) {
         return {
            street: item
         }
@@ -21,8 +21,9 @@ export default class List extends React.Component {
     }
     return list;
   }
+
   componentWillReceiveProps(nextProps){
-    if(this.props.props!==nextProps.props){
+    if(this.props.props.data !==nextProps.props){
       const list = this.getList(nextProps);
       this.setState({
          list: list
@@ -41,16 +42,18 @@ export default class List extends React.Component {
         <ul className={styles.list}>
             {this.state.list.map((item, index) => {
               return (
-                <li onClick={this.onClick.bind(this,index)} className={styles.item} key={item.street.id}>
+                <li onClick={this.onClick.bind(this,index)}
+                    className={styles.item}
+                    key={item.street.id} >
+
                   <img src={item.street.places.present[0].photos[0].images.large}/>
                   <div className={styles.cover}></div>
                   <div className={styles.streetName}>
                     <span>{item.street.name}</span>
                   </div>
                   <Street
-                    active={this.state.activeItem === index}
-                    props={item.street}
-                    key={index}
+                    props={this.props.props}
+                    active={this.props.props.activeItem}
                   />
                 </li>
               )

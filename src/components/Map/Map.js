@@ -16,8 +16,8 @@ class Map extends React.Component {
 
   getCoordinates(props) {
     let coordinates = [];
-    if (props.props) {
-      coordinates = props.props.map(function(item, i) {
+    if (props.props.data) {
+      coordinates = props.props.data.map(function(item, i) {
         return (item.path.coordinates)
      });
     }
@@ -43,17 +43,23 @@ class Map extends React.Component {
       styles: this.state.styles
     });
   }
-  createPolyline() {
+  createPolyline(props) {
     var map = this.map;
     this.state.coordinates.map(function(i, item) {
       let position = [];
       position = i.map(function(el, index) {
         return new google.maps.LatLng(el[0], el[1]);
       });
+      let color;
+      if(props == item) {
+        color = '#40aabc'
+      } else {
+        color = '#222'
+      }
       var polylines = new google.maps.Polyline({
         path: position,
         geodesic: true,
-        strokeColor: '#222',
+        strokeColor: color,
         strokeOpacity: 1.0,
         strokeWeight: 2,
       })
@@ -73,9 +79,9 @@ class Map extends React.Component {
   }
 
   componentDidUpdate() {
-    this.map = this.createMap()
-    this.marker = this.createMarker()
-    this.polyline = this.createPolyline()
+      this.map = this.createMap()
+      this.marker = this.createMarker()
+      this.polyline = this.createPolyline(this.props.props.activeItem);
   }
 
   render() {

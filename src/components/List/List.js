@@ -29,19 +29,19 @@ export default class List extends React.Component {
       });
     }
   }
-  updateState(index) {
-    this.setState({
-      activeItem: index
-    })
+
+  onClick(index) {
+    this.props.setActiveItem(index);
   }
 
   render() {
+
     return (
       <div>
         <ul className={styles.list}>
             {this.state.list.map((item, index) => {
               return (
-                <li onClick={this.updateState.bind(this, index)} className={styles.item} key={item.street.id}>
+                <li onClick={this.onClick.bind(this,index)} className={styles.item} key={item.street.id}>
                   <img src={item.street.places.present[0].photos[0].images.large}/>
                   <div className={styles.cover}></div>
                   <div className={styles.streetName}>

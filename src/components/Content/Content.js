@@ -9,7 +9,8 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+        data: [],
+        activeItem: ''
     };
   }
 
@@ -30,13 +31,19 @@ export default class App extends React.Component {
     this.loadFromServer();
   }
 
+  setActiveItem(item) {
+    this.setState({
+        activeItem: item
+    });
+  }
 
   render() {
     return (
       <div>
         <Header />
-        <List props={this.state.data} />
-        <Map props={this.state.data} />
+        <List setActiveItem={this.setActiveItem.bind(this)}
+              props={this.state.data} />
+        <Map props={this.state} />
       </div>
     )
   }

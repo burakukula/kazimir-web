@@ -36,13 +36,12 @@ export default class List extends React.Component {
   }
 
   render() {
-
     return (
       <div>
         <ul className={styles.list}>
             {this.state.list.map((item, index) => {
               return (
-                <li onClick={this.onClick.bind(this,index)}
+                <li onClick={this.onClick.bind(this, index)}
                     className={styles.item}
                     key={item.street.id} >
 
@@ -51,10 +50,12 @@ export default class List extends React.Component {
                   <div className={styles.streetName}>
                     <span>{item.street.name}</span>
                   </div>
-                  <Street
-                    props={this.props.props}
-                    active={this.props.props.activeItem}
-                  />
+
+                  {
+
+                    this.props.props.activeItem === index ? <Street props={item.street.places} /> : null
+                  }
+
                 </li>
               )
             })}

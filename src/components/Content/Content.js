@@ -3,6 +3,7 @@ import {Link} from 'react-router'
 import $ from 'jquery'
 import List from '../List/List'
 import Map from '../Map/Map'
+import Street from '../Street/Street'
 import Header from '../Header/Header'
 
 export default class App extends React.Component {
@@ -10,7 +11,8 @@ export default class App extends React.Component {
     super(props);
     this.state = {
         data: [],
-        activeItem: ''
+        activeItem: '',
+        active: false
     };
   }
 
@@ -31,20 +33,27 @@ export default class App extends React.Component {
     this.loadFromServer();
   }
 
-  setActiveItem(item) {
+  setActiveItem(item, prevState) {
     this.setState({
-        activeItem: item
+        activeItem: item,
+        active: true
     });
   }
 
   render() {
-    return (
-      <div>
-        <Header />
-        <List setActiveItem={this.setActiveItem.bind(this)}
-              props={this.state} />
-        <Map props={this.state} />
-      </div>
-    )
+    let content = '';
+    if(this.state.active == true) {
+        content = <Street props={this.state}/>;
+    } else {
+      content = <List setActiveItem={this.setActiveItem.bind(this)}
+            props={this.state}/>;
+    }
+      return (
+          <div>
+              <Header />
+              {content}
+              <Map props={this.state}/>
+          </div>
+      )
   }
 }

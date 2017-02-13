@@ -1,10 +1,13 @@
-/*.streetElement {
-  display: none;
-}
-.streetElement .is-true {
-  display: none;
+.streetElement {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    top: 64px;
+    color: #000;
 }
 
-.streetElement .is-true {
-  display: block;
-}*/

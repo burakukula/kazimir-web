@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link} from 'react-router'
-import $ from 'jquery'
 import List from '../List/List'
 import Map from '../Map/Map'
 import Street from '../Street/Street'
@@ -17,16 +16,13 @@ export default class App extends React.Component {
   }
 
   loadFromServer() {
-    $.ajax({
-      url: this.props.source,
-      dataType: 'json',
-      cache: false,
-      success: function(data) {
-        this.setState({
-          data: data
-        })
-      }.bind(this)
-    });
+      const url = this.props.source;
+      fetch(url)
+          .then( (response) => {
+              return response.json() })
+          .then( (json) => {
+              this.setState({data: json});
+          });
   }
 
   componentDidMount() {

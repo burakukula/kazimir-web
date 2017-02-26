@@ -7,7 +7,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className={styles.app}>
-        <Content source="http://kazimirapp.pl/streets.json"/>
+        <Content source="https://kazimirapp.pl/streets.json"/>
       </div>
     );
   }

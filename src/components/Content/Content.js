@@ -41,14 +41,14 @@ export default class App extends React.Component {
     if(this.state.active == true) {
         content = <Street props={this.state}/>;
     } else {
-      content = <List setActiveItem={this.setActiveItem.bind(this)}
-            props={this.state}/>;
+        content = <Link to="/street"><List setActiveItem={this.setActiveItem.bind(this)}
+                                        props={this.state}/></Link>;
     }
       return (
           <div>
               <Header />
               {content}
-              <Map props={this.state}/>
+              {/*<Map props={this.state}/>*/}
           </div>
       )
   }
